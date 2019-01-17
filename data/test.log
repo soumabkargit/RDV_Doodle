@@ -1,7 +1,13 @@
-/*C1*/SET SCHEMA SYSTEM_LOBS
-INSERT INTO BLOCKS VALUES(0,2147483647,0)
-COMMIT
-/*C2*/SET SCHEMA PUBLIC
+/*C3*/SET SCHEMA PUBLIC
+alter table ChoixDate drop constraint FK_9tg3vx16urlw0j6ag1yiqxuoa
+alter table Participant drop constraint FK_1jp3xvpmje9sllayhmqosgulm
+alter table Participant_Allergie drop constraint FK_tcs9ibwiw2324t3xl6t0knbkj
+alter table Participant_Allergie drop constraint FK_epro1vogcmb9yjyhypbvchisn
+alter table Sondage drop constraint FK_gyy7reowkcox2140gc4pkkejw
+alter table Sondage drop constraint FK_s7hxr2t26jhrofua4lwgbuj18
+alter table Sondage drop constraint FK_6am8w6tsu7q2er10spg5y2g9o
+alter table Sondage_Participant drop constraint FK_nypx9cpui67ybvh4ixl7tn3a2
+alter table Sondage_Participant drop constraint FK_owctvpwaefvijmh2ymjkfht1a
 drop table Allergie if exists
 drop table ChoixDate if exists
 drop table Participant if exists
