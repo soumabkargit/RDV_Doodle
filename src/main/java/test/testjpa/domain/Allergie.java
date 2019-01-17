@@ -31,9 +31,7 @@ public class Allergie {
 		this.libelleAllergie = libelleAllergie;
 	}
 	
-	@ManyToMany
-//	@JoinTable(name = "Allergie_Participant", joinColumns=@JoinColumn(name="Participant_ID", referencedColumnName="idAllergie"),
-//	   inverseJoinColumns=@JoinColumn(name="Participant_ID", referencedColumnName="email"))
+	@ManyToMany(mappedBy="allergies")
 	public Collection<Participant> getParticipants() {
 		return participants;
 	}

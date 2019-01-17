@@ -40,7 +40,7 @@ public class Participant {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
-	@ManyToMany
+	@ManyToMany(mappedBy="participants")
 	public Collection<Sondage> getSondages() {
 		return sondages;
 	}
@@ -55,8 +55,8 @@ public class Participant {
 		this.preferenceAlimentaire = preferenceAlimentaire;
 	}
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "Participant_Allergie", joinColumns=@JoinColumn(name="email", referencedColumnName="email"),
-			   inverseJoinColumns=@JoinColumn(name="idAllergie", referencedColumnName="idAllergie"))
+	@JoinTable(name = "Participant_Allergie", joinColumns=@JoinColumn(name="emailParticipant"),
+			   inverseJoinColumns=@JoinColumn(name="idAllergie"))
 	public Collection<Allergie> getAllergies() {
 		return allergies;
 	}

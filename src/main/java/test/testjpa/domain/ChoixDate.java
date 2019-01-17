@@ -1,6 +1,8 @@
 package test.testjpa.domain;
 
 import java.util.Date;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -36,7 +38,7 @@ public class ChoixDate {
 	public void setPauseDejeuner(boolean pauseDejeuner) {
 		this.pauseDejeuner = pauseDejeuner;
 	}
-	@OneToOne
+	@OneToOne(cascade=CascadeType.ALL)
 	public Sondage getSondage() {
 		return sondage;
 	}

@@ -51,8 +51,8 @@ public class Sondage {
 		this.choixDate = choixDateSondage;
 	}
 	@ManyToMany(cascade = CascadeType.ALL)
-	@JoinTable(name = "Sondage_Participant", joinColumns=@JoinColumn(name="idSondage", referencedColumnName="idSondage"),
-	   inverseJoinColumns=@JoinColumn(name="email", referencedColumnName="email"))
+	@JoinTable(name = "Sondage_Participant", joinColumns=@JoinColumn(name="idSondage"),
+	   inverseJoinColumns=@JoinColumn(name="emailParticipant"))
 	public Collection<Participant> getParticipants() {
 		return participants;
 	}
